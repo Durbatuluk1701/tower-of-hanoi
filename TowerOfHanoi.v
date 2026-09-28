@@ -808,8 +808,7 @@ Proof.
 Qed.
 
 Theorem winnable_from_start : forall n,
-  exists end_st, 
-    play (start_game_n_disks n) end_st /\ won end_st = true.
+  { end_st | play (start_game_n_disks n) end_st /\ won end_st = true }.
 Proof.
   intros.
   pose proof (valid_state_start_game n).
