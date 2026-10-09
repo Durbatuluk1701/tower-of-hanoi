@@ -528,14 +528,6 @@ Proof.
   simpl; intuition.
 Qed.
 
-(* Lemma game_smallest_bounce_around : forall l1 l2 l3 l1' l2' l3',
-  valid_state (l1, l2, l3) ->
-  game (l1, l2, l3) (l1', l2', l3') ->
-  forall a,
-    (forall x, (In x l1 \/ In x l2 \/ In x l3) -> a < x) ->
-    game (a :: l1, l2, l3) (a :: l1', l2', l3').
-Proof.
-Admitted. *)
 Ltac solve_valid Hax :=
   try (match goal with
   | [ |- match ?x with _ => _ end ] => 
